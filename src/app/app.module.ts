@@ -13,14 +13,14 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent, 
-    AuthorsComponent,
+    // AuthorsComponent,
     CoursesComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [
-    AuthorsService,
+    // AuthorsService,
     CoursesService
   ],
   bootstrap: [AppComponent]
