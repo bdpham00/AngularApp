@@ -3,13 +3,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'authors',
-  templateUrl: './authors.component.html',
-  styleUrls: ['./authors.component.css']
+  // templateUrl: './authors.component.html',
+  template: `<ul>
+  <li *ngFor="let author of authors">
+    {{author}}
+  </li>
+</ul>`,
 })
 export class AuthorsComponent {
   authors; 
 
-  constructor(service: AuthorsService) {
+  constructor() {
+      let service = new AuthorsService(); 
       this.authors = service.getAuthors();  
    }
 
