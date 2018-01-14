@@ -3,48 +3,19 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: 'courses',
-    template: `<h2>{{"Title: "+ title}}</h2>
-               <ul>
-                    <li *ngFor="let course of courses">
-                        {{course}}
-                    </li>
-               </ul>
-               <div>
-               <div (click)="onDivClicked()">
-               <button (click)="onSave($event)">Save</button>
-                </div>
-               </div>
-               
-               <input [(ngModel)] = "email" (keyup.enter)="onKeyUp()" />
+    template: `{{ course.title }} <br />
+                {{course.rating}} <br />
+                {{course.students}} <br />
+                {{course.price}} <br /> 
+                {{course.releaseDate}}
                `
 })
 export class CoursesComponent {
-    title = 'List of Courses';
-    courses;
-    isActive; 
-    email = "bdpham00@gmail.com"; 
-    
-    constructor() {
-        let service = new CoursesService(); 
-        this.courses = service.getCourses(); 
-        this.isActive = true; 
-    }
-
-    onKeyUp() {
-        console.log(this.email); 
-    }
-
-    onSave($event) {
-        //Prevents Event bubbling
-        $event.stopPropagation(); 
-        console.log("Button clicked!", $event); 
-    }
-
-    onDivClicked() {
-        console.log("Div clicked"); 
-    }
-    
-    getTitle() {
-        return this.title; 
+    course = {
+        title: "The complete Angular course", 
+        rating: 4.45,
+        students: 4321, 
+        price: 150.90, 
+        releaseDate: new Date(2018, 1, 23)
     }
 }
