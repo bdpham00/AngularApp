@@ -8,15 +8,19 @@ import { Component } from '@angular/core'
                     <li *ngFor="let course of courses">
                         {{course}}
                     </li>
-               </ul>`
+               </ul>
+               
+               <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>`
 })
 export class CoursesComponent {
     title = 'List of Courses';
     courses;
+    isActive; 
     
     constructor() {
         let service = new CoursesService(); 
         this.courses = service.getCourses(); 
+        this.isActive = true; 
     }
     
     getTitle() {
