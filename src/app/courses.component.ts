@@ -9,18 +9,39 @@ import { Component } from '@angular/core'
                         {{course}}
                     </li>
                </ul>
+               <div>
+               <div (click)="onDivClicked()">
+               <button (click)="onSave($event)">Save</button>
+                </div>
+               </div>
                
-               <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>`
+               <input [(ngModel)] = "email" (keyup.enter)="onKeyUp()" />
+               `
 })
 export class CoursesComponent {
     title = 'List of Courses';
     courses;
     isActive; 
+    email = "bdpham00@gmail.com"; 
     
     constructor() {
         let service = new CoursesService(); 
         this.courses = service.getCourses(); 
         this.isActive = true; 
+    }
+
+    onKeyUp() {
+        console.log(this.email); 
+    }
+
+    onSave($event) {
+        //Prevents Event bubbling
+        $event.stopPropagation(); 
+        console.log("Button clicked!", $event); 
+    }
+
+    onDivClicked() {
+        console.log("Div clicked"); 
     }
     
     getTitle() {
