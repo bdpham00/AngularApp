@@ -1,3 +1,4 @@
+import { FavoritesComponent } from './favorites/favorites.component';
 import { AuthorsComponent } from './authors.component';
 import { AuthorsService } from './authors.service';
 import { CoursesComponent } from './courses.component';
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent, 
     AuthorsComponent,
-    CoursesComponent
+    CoursesComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule, 
