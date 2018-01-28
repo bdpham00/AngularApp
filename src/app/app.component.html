@@ -1,9 +1,4 @@
-<h1>Hello World</h1>
-<favorites [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorites>
-<bootstrap-panel >
-    <ng-container class="heading">Heading</ng-container> <!--ng-container renders text without the heading-->
-    <div class="body">
-        <h2>Body</h2>
-        <p>Some paragraph</p>
-    </div>
-</bootstrap-panel>
+<like 
+    [likesCount]="tweet.likesCount"
+    [isActive]="tweet.isActive"
+    ></like>
