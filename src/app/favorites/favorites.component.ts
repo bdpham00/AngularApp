@@ -4,17 +4,23 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'favorites',
   templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.css']
+  styles: [
+     `
+      .glyphicon {
+        color: green;
+      }
+
+      .gliphicon-star {
+        background: black;
+      }
+     `
+  ],
+  styleUrls: ['./favorites.component.css'],
+  //Angular selects order of last style declared in this component. However will favor styles declared in favorites.component.html
 }) 
-export class FavoritesComponent implements OnInit{
+export class FavoritesComponent {
   @Input('isFavorite') isSelected: boolean;
   @Output('change') click = new EventEmitter(); 
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
 
   onClick() {
      this.isSelected = !this.isSelected;
