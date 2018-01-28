@@ -6,5 +6,12 @@
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bao app';
+  post = {
+    title: "Title", 
+    isFavorite: true,
+  }
+
+  onFavoriteChange() {
+    console.log("Favorite Change"); 
+  }
 }
