@@ -1,22 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+// import { ViewEncapsulation } from '@angular/compiler/src/core';
 // import { EventEmitter } from '@angular/core/src/event_emitter';
 
 @Component({
   selector: 'favorites',
   templateUrl: './favorites.component.html',
-  styles: [
-     `
-      .glyphicon {
-        color: green;
-      }
-
-      .gliphicon-star {
-        background: black;
-      }
-     `
-  ],
   styleUrls: ['./favorites.component.css'],
-  //Angular selects order of last style declared in this component. However will favor styles declared in favorites.component.html
+  encapsulation: ViewEncapsulation.Emulated //Shadow DOM Most of the time will be emulated, do not use this property
 }) 
 export class FavoritesComponent {
   @Input('isFavorite') isSelected: boolean;
