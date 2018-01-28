@@ -1,3 +1,4 @@
+import { TitleCasePipe } from './title-case.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AuthorsComponent } from './authors.component';
 import { AuthorsService } from './authors.service';
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     AppComponent, 
     AuthorsComponent,
     CoursesComponent,
-    FavoritesComponent
+    FavoritesComponent, 
+    TitleCasePipe
   ],
   imports: [
     BrowserModule, 
