@@ -8,4 +8,8 @@ import { Component, Input } from '@angular/core';
 export class ZippyComponent {
   @Input('title') title: string;
   IsExpanded: boolean = true; 
+
+  toggle() {
+    this.IsExpanded = !this.IsExpanded; 
+  }
 }

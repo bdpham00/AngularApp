@@ -1,13 +1,12 @@
 .zippy {
-    border: black; 
-    border-color: blue; 
+    padding: 20px;
 }
 
 .zippy-heading {
-    padding: 20px;
     cursor: pointer; 
     border: black;
     font-weight: bold; 
+    padding: 20px; 
 }
 
 .zippy-body{
@@ -16,4 +15,8 @@
 
 .expanded {
     background: #f0f0f0; 
+}
+
+.glyphicon {
+    float: right;
 }
