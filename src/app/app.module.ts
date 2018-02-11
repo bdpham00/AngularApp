@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { LikeComponent } from './like/like.component';
     AuthorsComponent,
     CoursesComponent,
     FavoritesComponent, 
-    TitleCasePipe, PanelComponent, LikeComponent
+    TitleCasePipe, PanelComponent, LikeComponent, ZippyComponent
   ],
   imports: [
     BrowserModule, 
