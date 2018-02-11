@@ -1,3 +1,9 @@
-<p>
-  zippy works!
-</p>
+<div class="zippy">
+  <div class="zippy-heading"
+    [class]="isExpanded">
+    {{title}}
+  </div>
+  <div class="zippy-body">
+    <ng-content></ng-content>
+  </div>
+</div>
