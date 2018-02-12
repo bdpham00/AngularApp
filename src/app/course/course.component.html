@@ -1,3 +1,43 @@
-<p>
-  course works!
-</p>
+<form class="myForm">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="courseName">Course Name</label> <br>
+            <input 
+                ngModel
+                name="courseName" 
+                type="text" 
+                class="form-control"
+                minlength="5"
+                maxlength="10"
+                required
+                #courseNameVar="ngModel"
+                (change)="log(courseNameVar)"/>
+                <div *ngIf="courseNameVar.touched && !courseNameVar.valid" class="alert alert-danger">
+                    <div *ngIf="courseNameVar.errors.required">Course name is required</div>
+                    <div *ngIf="courseNameVar.errors.minlength">Minimum of 5 charcaters</div>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label> <br>
+            <select
+                ngModel 
+                name="category" 
+                class="form-control">
+                <option></option>
+                <option 
+                    *ngFor="let category of categories" 
+                    [value]="category.id"
+                >{{ category.name }}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input
+                ngModel 
+                type="checkbox" 
+                name="guarantee">
+            <label for="guarantee">30 day back guarantee</label>
+        </div>
+        <input type="submit" >
+    </div>
+</form> 
