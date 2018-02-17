@@ -1,3 +1,7 @@
 .myForm {
     padding: 20px; 
 }
+
+.has-errors {
+    border-color: red; 
+}

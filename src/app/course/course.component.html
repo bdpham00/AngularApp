@@ -1,4 +1,4 @@
-<form class="myForm">
+<form #f="ngForm" (ngSubmit)="submit(f)" class="myForm">
     <div class="form-group">
         <div class="form-group">
             <label for="courseName">Course Name</label> <br>
@@ -11,7 +11,9 @@
                 maxlength="10"
                 required
                 #courseNameVar="ngModel"
-                (change)="log(courseNameVar)"/>
+                (change)="log(courseNameVar)"
+                [class.has-errors]="courseNameVar.invalid && courseNameVar.touched"
+                />
                 <div *ngIf="courseNameVar.touched && !courseNameVar.valid" class="alert alert-danger">
                     <div *ngIf="courseNameVar.errors.required">Course name is required</div>
                     <div *ngIf="courseNameVar.errors.minlength">Minimum of 5 charcaters</div>
@@ -39,5 +41,9 @@
             <label for="guarantee">30 day back guarantee</label>
         </div>
         <input type="submit" >
+
+        <p>
+            {{ f.form.value | json }}
+        </p>
     </div>
 </form> 
