@@ -15,11 +15,13 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent, 
+    SignupFormComponent,
     AuthorsComponent,
     CoursesComponent,
     FavoritesComponent, 
