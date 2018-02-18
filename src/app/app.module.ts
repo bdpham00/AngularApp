@@ -1,3 +1,4 @@
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AuthorsComponent } from './authors.component';
@@ -6,7 +7,7 @@ import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 
 
@@ -15,21 +16,25 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent, 
-    SignupFormComponent,
     AuthorsComponent,
     CoursesComponent,
     FavoritesComponent, 
-    TitleCasePipe, PanelComponent, LikeComponent, ZippyComponent, CourseComponent
+    TitleCasePipe, 
+    PanelComponent, 
+    LikeComponent, 
+    ZippyComponent, 
+    CourseComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthorsService,
