@@ -16,6 +16,7 @@ import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CourseComponent } from './course/course.component';
     LikeComponent, 
     ZippyComponent, 
     CourseComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule, 
