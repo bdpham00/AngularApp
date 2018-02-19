@@ -18,4 +18,10 @@ export class SignupFormComponent {
     // console.log(model);
     return model; 
   }
+
+  login() {
+    this.form.setErrors({
+      inValidLogin: true
+    }); 
+  }
 }
