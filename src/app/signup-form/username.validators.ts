@@ -1,7 +1,5 @@
 import { AbstractControl } from "@angular/forms";
 import { ValidationErrors } from "@angular/forms/src/directives/validators";
-import { setTimeout } from "timers";
-import { reject } from "q";
 
 export class UsernameValidators {
     static cannotContainSpace(control: AbstractControl): ValidationErrors {
@@ -17,11 +15,11 @@ export class UsernameValidators {
 
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if((control.value as string) === "bao")
+                if (control.value === 'bao')
                     resolve({ shouldBeUnique: true }); 
-    
-                resolve(null);   
+                else
+                    resolve(null);   
             }, 2000); 
-        })
+        }); 
     }
 }
