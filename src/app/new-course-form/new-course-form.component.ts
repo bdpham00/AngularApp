@@ -18,13 +18,13 @@ export class NewCourseFormComponent {
 
 
   //Form builder builds the same form as indicatd above
-  constructor(fb: FormBuilder) {
-    this.form = fb.group({
-      name: ['', Validators.required],
-      contact: fb.group({
-        email: [], 
-        phone: []
-      })
-    })
-  }
+  // constructor(fb: FormBuilder) {
+  //   this.form = fb.group({
+  //     name: ['', Validators.required],
+  //     contact: fb.group({
+  //       email: [], 
+  //       phone: []
+  //     })
+  //   })
+  // }
 }

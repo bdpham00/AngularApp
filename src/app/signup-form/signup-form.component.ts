@@ -17,7 +17,7 @@ export class SignupFormComponent {
   
   get username() {
     let model = this.form.get('account.username'); 
-    // console.log(model);
+    console.log(model);
     return model; 
   }
 

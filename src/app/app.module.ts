@@ -17,6 +17,7 @@ import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     ZippyComponent, 
     CourseComponent,
     SignupFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    ChangePasswordFormComponent
   ],
   imports: [
     BrowserModule, 
