@@ -1,16 +1,15 @@
-import { ValidationErrors } from '@angular/forms/src/directives/validators';
 import { AbstractControl } from '@angular/forms';
-import { reject } from 'q';
+import { ValidationErrors } from '@angular/forms/src/directives/validators';
 
 export class PasswordValidators{
-    static IsValidPassword(control: AbstractControl): Promise<ValidationErrors|null> {
-        return new Promise((resolve) => {
+    static IsInvalidOldPassword(control: AbstractControl): Promise<ValidationErrors|null> {
+        return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if((control.value as string) === '1234')
-                    resolve({ IsValidPassword: true })
+                if(control.value !== '1234')
+                    resolve({ IsInvalidOldPassword: true })
                 else
                     resolve(null); 
-            }, 2000)
+            }, 2000); 
         }); 
     }
 }
