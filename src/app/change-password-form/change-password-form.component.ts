@@ -9,10 +9,14 @@ import { PasswordValidators } from './password.validators';
 })
 export class ChangePasswordFormComponent {
   form = new FormGroup({
-      'oldPassword': new FormControl('', [Validators.required]),
+      'oldPassword': new FormControl('', [Validators.required, PasswordValidators.IsValidPassword]),
       'newPassword': new FormControl('', [Validators.required]), 
       'confirmPassword': new FormControl('', [Validators.required])
   }); 
+
+  logForm() {
+    console.log(this.form); 
+  }
 
   get oldPassword() {
     var model = this.form.get('oldPassword');
@@ -21,7 +25,6 @@ export class ChangePasswordFormComponent {
   }
 
   get newPassword() {
-    console.log(this.form.get('newPassword')); 
     return this.form.get('newPassword'); 
   }
 

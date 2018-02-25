@@ -3,17 +3,14 @@ import { AbstractControl } from '@angular/forms';
 import { reject } from 'q';
 
 export class PasswordValidators{
-    static checkPassword(control: AbstractControl): Promise<ValidationErrors|null> {
-        return new Promise((resolve, reject) => {
+    static IsValidPassword(control: AbstractControl): Promise<ValidationErrors|null> {
+        return new Promise((resolve) => {
             setTimeout(() => {
-                if((control.value) == "1234") {
-                   resolve({
-                       checkPassword: true
-                   }) 
-                }
+                if((control.value as string) === '1234')
+                    resolve({ IsValidPassword: true })
                 else
                     resolve(null); 
-            }, '2000')
+            }, 2000)
         }); 
     }
 }
