@@ -11,16 +11,14 @@ export class ChangePasswordFormComponent {
   form = new FormGroup({
       'oldPassword': new FormControl('', Validators.required, PasswordValidators.IsInvalidOldPassword),
       'newPassword': new FormControl('', Validators.required), 
-      'confirmPassword': new FormControl('', Validators.required)
+      'confirmPassword': new FormControl('', {
+        'validators': PasswordValidators.passwordsShouldMatch
+      })
   }); 
-
-  logForm() {
-    console.log(this.form); 
-  }
 
   get oldPassword() {
     var model = this.form.get('oldPassword');
-    console.log(model); 
+    // console.log(model); 
     return model;  
   }
 

@@ -12,4 +12,13 @@ export class PasswordValidators{
             }, 2000); 
         }); 
     }
+        
+    static passwordsShouldMatch(control: AbstractControl) {
+        let newPassword = control.get('newPassword'); 
+        console.log(control.value); 
+        if(control.value !== newPassword)
+            return  { passwordsShouldMatch: true }; 
+        
+        return null;
+    }
 }
