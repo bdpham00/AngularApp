@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
@@ -10,7 +11,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
@@ -18,7 +18,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { CourseComponent } from './course/course.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
-
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +33,14 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
     CourseComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    ChangePasswordFormComponent
+    ChangePasswordFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     AuthorsService,
