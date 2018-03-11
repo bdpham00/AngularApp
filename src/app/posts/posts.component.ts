@@ -16,11 +16,12 @@ export class PostsComponent {
     });   
   }
 
-  update(post) {
-    this.http.patch(this.url + "/" + post.id, JSON.stringify({ isRead: true }))
+  delete(post) {
+    this.http.delete(this.url + "/" + post.id)
       .subscribe(response => {
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);  
         console.log(response.json()); 
       }); 
-    this.http.put(this.url, JSON.stringify({ isRead: true })); 
   }
 }
