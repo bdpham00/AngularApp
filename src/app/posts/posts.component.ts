@@ -8,18 +8,19 @@ import { Component, Inject } from '@angular/core';
 })
 export class PostsComponent {
   posts: any[]; 
+  url: string = "http://jsonplaceholder.typicode.com/posts"; 
   constructor(@Inject(Http) private http) {
-    http.get('http://jsonplaceholder.typicode.com/posts')
+    http.get(this.url)
     .subscribe(response => {
       this.posts = response.json(); 
-    }) 
+    });   
   }
-  // http: Http; 
 
-  // hello() {
-  //   this.http.get('http://jsonplaceholder.typicode.com/posts')
-  //   .subscribe(response => {
-  //     console.log(response); 
-  //   }) 
-  // }
+  update(post) {
+    this.http.patch(this.url + "/" + post.id, JSON.stringify({ isRead: true }))
+      .subscribe(response => {
+        console.log(response.json()); 
+      }); 
+    this.http.put(this.url, JSON.stringify({ isRead: true })); 
+  }
 }
