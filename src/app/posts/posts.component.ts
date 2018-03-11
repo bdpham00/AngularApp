@@ -1,19 +1,15 @@
 import { Http } from '@angular/http';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit{
   posts: any[]; 
   url: string = "http://jsonplaceholder.typicode.com/posts"; 
   constructor(@Inject(Http) private http) {
-    http.get(this.url)
-    .subscribe(response => {
-      this.posts = response.json(); 
-    });   
   }
 
   delete(post) {
@@ -23,5 +19,12 @@ export class PostsComponent {
         this.posts.splice(index, 1);  
         console.log(response.json()); 
       }); 
+  }
+
+  ngOnInit() {
+    this.http.get(this.url)
+    .subscribe(response => {
+      this.posts = response.json(); 
+    });   
   }
 }
