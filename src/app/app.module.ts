@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { TitleCasePipe } from './title-case.pipe';
@@ -44,7 +45,8 @@ import { PostsComponent } from './posts/posts.component';
   ],
   providers: [
     AuthorsService,
-    CoursesService
+    CoursesService, 
+    PostService
   ],
   bootstrap: [AppComponent]
 })
