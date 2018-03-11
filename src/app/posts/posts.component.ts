@@ -11,20 +11,44 @@ export class PostsComponent implements OnInit{
   constructor(@Inject(PostService) private service) {
   }
 
+  createPost(post) {
+    this.service.createPost().
+    subscribe(response => {
+      post['id'] = response.json().id; 
+      this.posts.splice(0, 0, post); 
+    }, (error: Response) => {
+      if(error.status == 400) {
+        //If form was available
+        // this.form.setErrors(error.json()); 
+      }
+      else {
+        alert("Unexpected error occered"); 
+        //Log to database
+        console.log(error); 
+      }
+    })
+  }
+
   deletePost(post) {
-    this.service.deletePost(post)
+    this.service.deletePost(345)
       .subscribe(response => {
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1);  
         console.log(response.json()); 
-      }, error => {
-        alert("Unexpected error occured in delete"); 
-        console.log(error); 
+      }, (error: Response) => {
+        if(error.status == 404) {
+          alert("This post has already been deleted"); 
+        }
+        else {
+          alert("Unexpected error occured in delete"); 
+          console.log(error); 
+        } 
       }); 
   }
 
   patchPost(post) {
-    this.service.patchPost(post).subscribe(response => {
+    this.service.patchPost(post).subscribe(
+      response => {
       console.log(response); 
     }, error => {
       alert("Unexpected error occured in patch"); 
@@ -34,7 +58,8 @@ export class PostsComponent implements OnInit{
 
   ngOnInit() {
     this.service.getPosts().
-    subscribe(response => {
+    subscribe(
+      response => {
       this.posts = response.json(); 
     }, error => {
       alert("Unexpected error has occured"); 
