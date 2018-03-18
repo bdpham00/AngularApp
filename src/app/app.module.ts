@@ -20,6 +20,8 @@ import { CourseComponent } from './course/course.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 import { PostsComponent } from './posts/posts.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubService } from './services/github.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { PostsComponent } from './posts/posts.component';
     SignupFormComponent,
     NewCourseFormComponent,
     ChangePasswordFormComponent,
-    PostsComponent
+    PostsComponent,
+    GithubFollowersComponent
   ],
   imports: [
     BrowserModule, 
@@ -46,7 +49,8 @@ import { PostsComponent } from './posts/posts.component';
   providers: [
     AuthorsService,
     CoursesService, 
-    PostService
+    PostService, 
+    GithubService
   ],
   bootstrap: [AppComponent]
 })
